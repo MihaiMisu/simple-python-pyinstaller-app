@@ -14,10 +14,10 @@ pipeline {
         }
         stage('Deploy') {
 	    def remote = [:]
-	    remote.name = 'test'
-	    remote.host = 'test.domain.com'
-	    remote.user = 'root'
-	    remote.password = 'password'
+	    remote.name = 'mmanole'
+	    remote.host = '10.183.57.15'
+	    remote.user = 'mmanole'
+	    remote.password = 'mmMajikan20@0'
 	    remote.allowAnyhosts = true
 	    stage('Remote SSH') {
 		sshCommand remote: remote, command: "ls"
