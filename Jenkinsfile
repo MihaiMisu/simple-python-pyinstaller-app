@@ -20,7 +20,7 @@ pipeline {
                      sshagent(credentials : ['jenkins-pem']) {
                         sh "echo pwd"
 			sh "pwd"
-                        sh 'ssh -t -t mmanole@10.183.57.15 -o StrictHostKeyChecking=no'
+                        sh 'ssh -t -t mmanole@10.183.57.15 -oStrictHostKeyChecking=no'
                         sh "echo pwd"
                         sh 'sudo -i -u root'
                         sh 'echo pwd'
