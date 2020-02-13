@@ -5,7 +5,7 @@ pipeline {
          APPLICATION = 'app'
          ENVIRONMENT = 'dev'
          MAINTAINER_NAME = 'jenkins'
-         MAINTAINER_EMAIL = 'jenkins@email.com'
+         MAINTAINER_EMAIL = 'mmanoledev2majikan@gmail.com'
     }
     stages {
          stage('clone repository') {
@@ -19,7 +19,8 @@ pipeline {
                  script {
                      sshagent(credentials : ['jenkins-pem']) {
                         sh "echo pwd"
-                        sh 'ssh -t -t ubuntu@xx.xxx.xx.xx -o StrictHostKeyChecking=no'
+			sh "pwd"
+                        sh 'ssh -t -t mmanole@10.183.57.15 -o StrictHostKeyChecking=no'
                         sh "echo pwd"
                         sh 'sudo -i -u root'
                         sh 'cd /opt/docker/web'
