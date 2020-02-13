@@ -23,7 +23,6 @@ pipeline {
                         sh 'ssh -t -t mmanole@10.183.57.15 -o StrictHostKeyChecking=no'
                         sh "echo pwd"
                         sh 'sudo -i -u root'
-                        sh 'cd /opt/docker/web'
                         sh 'echo pwd'
                     }
                  }
