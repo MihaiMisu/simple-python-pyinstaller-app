@@ -13,11 +13,15 @@ pipeline {
             }
         }
         stage('Deploy') {
-	    when{
-	    	expression {
-			currentBuild.result == null || currentBuild.result == 'SUCCESS'
+	    def remote = [:]
+	    remote.name = 'test'
+	    remote.host = 'test.domain.com'
+	    remote.user = 'root'
+	    remote.password = 'password'
+	    remote.allowAnyhosts = true
+	    stage('Remote SSH') {
+		sshCommand remote: remote, command: "ls"
 		}
-	    }
 
             steps {
                 echo 'Deploying....'		
